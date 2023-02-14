@@ -1,8 +1,8 @@
 # leaflet-challenge
 ## Module 15 Challenge
-For this project 
+For this project I created a map using Leaflet and GeoJSON to plot earthquake data. 
 
-## Creating Earthquake Visualization
+## Creating Visualization
 Using Leaflet I created a map that plots all the earthquakes from the dataset based on their longitude and latitude. The data markers reflect the magnitude of the earthquake by their size and the depth of the earthquake by their color. 
 
 ![map of earthquakes](Images/map.png)
@@ -21,3 +21,7 @@ A legend is displayed at the bottom right corner of the map to indicate the diff
 
 ![map legend](Images/legend.png)
 
+## References
+Dataset created by the [United States Geological Survey](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+
+Earthquake dataset used can be found [here](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson).
