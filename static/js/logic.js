@@ -10,8 +10,6 @@ d3.json(link).then(function (data) {
     // Pass the features to a createFeatures() function:
     createFeatures(data.features);
   });
-  
-
 
   // Function to determine marker size
 function markerSize(magnitude) {
@@ -28,8 +26,6 @@ function chooseColor(depth){
     else return "#FF0000";
   }
 
-
-
   // 2. 
   function createFeatures(earthquakeData) {
   
@@ -42,7 +38,7 @@ function chooseColor(depth){
       pointToLayer: function (feature, latlng) {
         
         var markers = {
-          radius: markerSize(8*feature.properties.mag),
+          radius: markerSize(7*feature.properties.mag),
           fillColor: chooseColor(feature.geometry.coordinates[2]),
           color: "black",
           weight: 1,
@@ -63,16 +59,6 @@ function chooseColor(depth){
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
   
-    // Create a baseMaps object.
-    // var baseMaps = {
-    //   "Street Map": street,
-    //   "Topographic Map": topo
-    // };
-  
-    // Creat an overlays object.
-    // var overlayMaps = {
-    //   Earthquakes: earthquakes
-    // }
   
     // Create a new map.
     // Edit the code to add the earthquake data to the layers.
@@ -83,25 +69,6 @@ function chooseColor(depth){
       zoom: 5,
       layers: [street, earthquakes]
     });
-  
-    // Create a layer control that contains our baseMaps.
-    // Be sure to add an overlay Layer that contains the earthquake GeoJSON.
-    // L.control.layers(baseMaps, overlayMaps, {
-    //   collapsed: false
-    // }).addTo(myMap);
-    
-    // function getColor(d) {
-    //     return d < 1 ? 'rgb(255,255,255)' :
-    //           d < 2  ? 'rgb(255,225,225)' :
-    //           d < 3  ? 'rgb(255,195,195)' :
-    //           d < 4  ? 'rgb(255,165,165)' :
-    //           d < 5  ? 'rgb(255,135,135)' :
-    //           d < 6  ? 'rgb(255,105,105)' :
-    //           d < 7  ? 'rgb(255,75,75)' :
-    //           d < 8  ? 'rgb(255,45,45)' :
-    //           d < 9  ? 'rgb(255,15,15)' :
-    //                       'rgb(255,0,0)';
-    // }
   
     // Create a legend to display information about our map
     var legend = L.control({position: 'bottomright'});
